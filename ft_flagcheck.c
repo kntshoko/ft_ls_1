@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 09:01:48 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/27 16:52:40 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/29 16:43:19 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,5 @@ void	ft_flagcheck(int argc, char **argv, char *path)
 		cnt++;
 	}
 	free(flg);
-	ft_impliment(flags, path);
+	ft_impliment(&flags, path);
 }

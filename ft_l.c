@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:51:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/26 16:39:18 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/29 16:58:03 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*ft_type(struct stat buff)
 {
 	char *l;
 
-	l = ft_strnew(2);
+	l = ft_strnew(1);
 	if (S_ISREG(buff.st_mode))
 		l[0] = '-';
 	else if (S_ISLNK(buff.st_mode))
@@ -33,7 +33,6 @@ static char	*ft_type(struct stat buff)
 		l[0] = 'd';
 	else
 		l[0] = '-';
-	l[1] = '\0';
 	return (l);
 }
 
@@ -65,11 +64,12 @@ char		*ft_l(struct dirent *fname)
 	stat(fname->d_name, &buff);
 	grp = getgrgid(buff.st_gid);
 	pss = getpwuid(buff.st_uid);
-	l = ft_strjoin(ft_type(buff), ft_strjoin(ft_permissions(buff),
-	ft_strjoin(" ",  ft_strjoin( ft_itoa(buff.st_nlink) , ft_strjoin("\t",
-	ft_strjoin(pss->pw_name, ft_strjoin(" ", ft_strjoin( grp->gr_name,
-	ft_strjoin("\t",ft_strjoin(ft_itoa(buff.st_size),ft_strjoin("\t",
-	ft_strjoin(ft_strsub(ctime(&buff.st_mtime), 4, 12),
-	ft_strjoin("\t", fname->d_name)))))))))))));
+	l = ft_join(ft_type(buff),ft_permissions(buff));/*,
+	ft_join(ft_strdup(" "),  ft_join(ft_itoa(buff.st_nlink) , ft_join(ft_strdup("\t"),
+	ft_join(ft_strdup(pss->pw_name), ft_join(ft_strdup(" "),
+	ft_join(ft_strdup(grp->gr_name), ft_join("\t",ft_join(ft_itoa(buff.st_size),
+	ft_join(ft_strdup("\t"), ft_join(ft_strsub(ctime(&buff.st_mtime), 4, 12),
+	ft_join(ft_strdup("\t"), fname->d_name)))))))))))));*/
+	ft_putendl("tttttttlllllttt");
 	return (l);
 }

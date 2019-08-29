@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:30:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/20 16:29:26 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/29 15:40:11 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	**ft_directories(char *path, int l, char *flags)
 	i = 0;
 	dname = opendir(path);
 	fname = readdir(dname);
-	d = (char **)malloc(l);
+	d = (char **)malloc(sizeof(char) * (l + 1));
 	while (fname != NULL)
 	{
 		if ((ft_strcmp(fname->d_name, ".") == 0 || ft_strcmp(fname->d_name,
