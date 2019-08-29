@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:51:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 16:58:03 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/29 17:25:09 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ char		*ft_l(struct dirent *fname)
 	stat(fname->d_name, &buff);
 	grp = getgrgid(buff.st_gid);
 	pss = getpwuid(buff.st_uid);
-	l = ft_join(ft_type(buff),ft_permissions(buff));/*,
+	l = ft_join(ft_type(buff), ft_join(ft_permissions(buff),
 	ft_join(ft_strdup(" "),  ft_join(ft_itoa(buff.st_nlink) , ft_join(ft_strdup("\t"),
 	ft_join(ft_strdup(pss->pw_name), ft_join(ft_strdup(" "),
-	ft_join(ft_strdup(grp->gr_name), ft_join("\t",ft_join(ft_itoa(buff.st_size),
-	ft_join(ft_strdup("\t"), ft_join(ft_strsub(ctime(&buff.st_mtime), 4, 12),
-	ft_join(ft_strdup("\t"), fname->d_name)))))))))))));*/
-	ft_putendl("tttttttlllllttt");
+	ft_join(ft_strdup(grp->gr_name), ft_join(ft_strdup("\t") ,
+	ft_join(ft_itoa(buff.st_size), ft_join(ft_strdup("\t") ,
+	ft_join(ft_strsub(ctime(&buff.st_mtime), 4, 12),
+	ft_join(ft_strdup("\t"), ft_strdup(fname->d_name))))))))))))));
 	return (l);
 }
