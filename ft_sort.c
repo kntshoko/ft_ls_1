@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:49:32 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 16:46:55 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/29 17:29:29 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,5 @@ int *ft_sort(char *path, char **flags)
 		t = ft_sorttime(c, l);
 	else
 		t = ft_sortascii(path, *flags);
-//	free(l);
 	return (t);
 }

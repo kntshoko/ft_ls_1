@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:37:25 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/27 18:00:03 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/29 18:00:54 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,15 @@ int				*ft_sortascii(char *path, char *flags)
 	l = ft_countcontent(path, flags);
 	c = ft_make_c(l);
 	sarray = ft_make_sarray(path, flags, l);
-	i = -1;
-	while (++i < l)
+	i = 0;
+	while (i < (l - 1))
 	{
-		j = -1;
-		while (++j < l)
-		{
-			if (ft_strcmp(sarray[i], sarray[j]) >= 1)
+			if (ft_cmp(sarray[i], sarray[i + 1]) == 1)
 			{
-				ft_swap_str(sarray[i], sarray[j]);
-				ft_swap_int(&c[i], &c[j]);
+				ft_swap_str(sarray[i], sarray[i + 1]);
+				ft_swap_int(&c[i], &c[i + 1]);
 			}
-		}
+			i++;
 	}
 	free(sarray);
 	return (c);

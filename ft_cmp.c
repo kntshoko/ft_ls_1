@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print.c                                         :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/13 08:35:41 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 17:34:48 by kntshoko         ###   ########.fr       */
+/*   Created: 2019/06/05 13:04:33 by kntshoko          #+#    #+#             */
+/*   Updated: 2019/08/29 17:58:43 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_print(int *order, char **ls, char revers)
+int	ft_cmp(const char *s1, const char *s2)
 {
-	int i;
+	size_t l;
 
-	i = 0;
-
-	if (revers == '1')
-	{
-		ft_putendl("not la!!!");
-		while (ls[i] != NULL)
-			i++;
-		while (--i >= 0)
-		{
-			ft_putendl(ls[order[i]]);
-		}
-
-	}
-	else
-	{
-		while (ls[i] != NULL)
-		{
-			ft_putendl(ls[order[i]]);
-			i++;
-		}	
-	}
+	l = 0;
+	while (s1[l] && (unsigned char)s1[l] == (unsigned char)s2[l])
+		l++;
+	if ((unsigned char)s1[l] > (unsigned char)s2[l])
+		return (1);
+	return (0);
 }
