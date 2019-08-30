@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:24:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 17:55:16 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/30 10:36:54 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char		*ft_l(struct dirent *fname);
 int			*ft_sort(char *path, char **flags);
 int			*ft_sorttime(long *c, int l);
 int			*ft_sortascii(char *path, char *flags);
-void		ft_print(int *order, char **ls, char revers);
+void		ft_print(int *order, char **ls, char *flags);
 void		ft_recurse(char *path, char *flags);
 int			ft_countdir(char *path, char *flags);
 char		**ft_directories(char *path, int l, char *flags);

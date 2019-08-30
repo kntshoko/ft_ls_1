@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 13:04:33 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 17:58:43 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/30 11:22:21 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int	ft_cmp(const char *s1, const char *s2)
 	while (s1[l] && (unsigned char)s1[l] == (unsigned char)s2[l])
 		l++;
 	if ((unsigned char)s1[l] > (unsigned char)s2[l])
-		return (1);
-	return (0);
+		return (-1);
+	return (1);
 }

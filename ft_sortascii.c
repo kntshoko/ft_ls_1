@@ -6,19 +6,19 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:37:25 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 18:00:54 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/30 15:38:24 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static void		ft_swap_str(char *s1, char *s2)
+static void		ft_swap_str(char **s1, char **s2)
 {
 	char *hold;
 
-	hold = s1;
-	s1 = s2;
-	s2 = hold;
+	hold = *s1;
+	*s1 = *s2;
+	*s2 = hold;
 }
 
 static void		ft_swap_int(int *i1, int *i2)
@@ -81,15 +81,20 @@ int				*ft_sortascii(char *path, char *flags)
 	c = ft_make_c(l);
 	sarray = ft_make_sarray(path, flags, l);
 	i = 0;
-	while (i < (l - 1))
+	j = 0;
+	while (sarray[++i])
 	{
-			if (ft_cmp(sarray[i], sarray[i + 1]) == 1)
-			{
-				ft_swap_str(sarray[i], sarray[i + 1]);
-				ft_swap_int(&c[i], &c[i + 1]);
-			}
-			i++;
+		printf("%d \n", i);
+j++;
+		if (ft_cmp(sarray[i], sarray[i - 1]) == 1)
+		{
+			printf("%s  vs  %s\n",sarray[i],sarray[i - 1]);
+			ft_swap_str(&sarray[i], &sarray[i - 1]);
+			ft_swap_int(&c[i], &c[i - 1]);
+			i = 0;
+		}
 	}
 	free(sarray);
+	printf("steps = %d\n", j);
 	return (c);
 }

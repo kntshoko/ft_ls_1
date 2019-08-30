@@ -6,35 +6,37 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:35:41 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 17:34:48 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/30 10:53:17 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	ft_print(int *order, char **ls, char revers)
+void	ft_print(int *order, char **ls, char *flags)
 {
 	int i;
+	int l;
 
 	i = 0;
-
-	if (revers == '1')
+	l = 0;
+	while (ls[i])
+		i++;
+	if (flags[3] == '1')
 	{
-		ft_putendl("not la!!!");
-		while (ls[i] != NULL)
-			i++;
-		while (--i >= 0)
+		i--;
+		while (i >= 0)
 		{
 			ft_putendl(ls[order[i]]);
+			i--;
 		}
 
 	}
 	else
 	{
-		while (ls[i] != NULL)
+		while (l < i)
 		{
-			ft_putendl(ls[order[i]]);
-			i++;
+			ft_putendl(ls[order[l]]);
+			l++;
 		}	
 	}
 }
