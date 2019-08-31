@@ -6,11 +6,14 @@
 #    By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/30 15:04:01 by kntshoko          #+#    #+#              #
-#    Updated: 2019/08/30 16:14:46 by kntshoko         ###   ########.fr        #
+#    Updated: 2019/08/31 11:17:36 by kntshoko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls.a
+EXE = ft_ls
+MAIN = main.c
+LIB = libft/libft.a 
 CC = gcc
 FLAG = -Wall -Werror -Wextra
 ARC = ar rc
@@ -48,20 +51,20 @@ OBJ = ft_impliment.o\
 	  ft_flagcheck.o\
 	  ft_print.o
 
-# all: ${NAME}
+# all: $(NAME)
 
-${NAME}:
-   ${CC} ${FLAG} -c ${SRC}
-   ${ARC} ${NAME} ${OBJ}
-   ranlib ${NAME}
-   ${CC} ${FLAG} main.c libft/libft.a ft_ls.a -o ft_ls
+$(NAME):
+		$(CC) $(FLAG) -c $(SRC)
+		$(ARC) $(NAME) $(OBJ)
+		ranlib $(NAME)
+		$(CC) $(FLAG) -o $(EXE) $(MAIN) $(LIB) $(NAME) 
 
-all: ${NAME}
+all: $(NAME)
 
 clean:
-	rm -f ${OBJ}
+		rm -f $(OBJ)
 
 fclean: clean
-	rm -f ${NAME} ft_ls
+		rm -f $(NAME) $(EXE)
 
 re: fclean all

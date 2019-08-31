@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:59:17 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/30 10:53:22 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 11:18:38 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_impliment(char **flags, char *path)
 {
 	char **ls;
-	char c;
 
 	ls = ft_listdir(flags, path);
 	ft_print(ft_sort(path, flags), ls, *flags);

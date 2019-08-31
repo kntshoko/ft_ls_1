@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:49:32 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 17:29:29 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 11:26:57 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int *ft_sort(char *path, char **flags)
 {
 	long	*c = NULL;
 	int		*t;
-	int		i;
 	int		l;
 
 	l = ft_countcontent(path, *flags);

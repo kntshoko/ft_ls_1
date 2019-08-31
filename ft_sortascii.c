@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:37:25 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/30 15:38:24 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 11:27:32 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ static int		*ft_make_c(int l)
 int				*ft_sortascii(char *path, char *flags)
 {
 	int		i;
-	int		j;
 	int		l;
 	int		*c;
 	char	**sarray;
@@ -81,20 +80,15 @@ int				*ft_sortascii(char *path, char *flags)
 	c = ft_make_c(l);
 	sarray = ft_make_sarray(path, flags, l);
 	i = 0;
-	j = 0;
 	while (sarray[++i])
 	{
-		printf("%d \n", i);
-j++;
 		if (ft_cmp(sarray[i], sarray[i - 1]) == 1)
 		{
-			printf("%s  vs  %s\n",sarray[i],sarray[i - 1]);
 			ft_swap_str(&sarray[i], &sarray[i - 1]);
 			ft_swap_int(&c[i], &c[i - 1]);
 			i = 0;
 		}
 	}
 	free(sarray);
-	printf("steps = %d\n", j);
 	return (c);
 }
