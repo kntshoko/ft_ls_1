@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:51:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 17:25:09 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 13:11:09 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char		*ft_l(struct dirent *fname)
 	struct group	*grp;
 	struct passwd	*pss;
 
-	stat(fname->d_name, &buff);
+	lstat(fname->d_name, &buff);
 	grp = getgrgid(buff.st_gid);
 	pss = getpwuid(buff.st_uid);
 	l = ft_join(ft_type(buff), ft_join(ft_permissions(buff),
