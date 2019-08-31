@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:37:25 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/31 11:27:32 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 15:52:14 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ static char		**ft_make_sarray(char *path, char *flags, int l)
 
 	dname = opendir(path);
 	fname = readdir(dname);
-	sarray = (char **)malloc(l + 1);
+	sarray = (char **)malloc(sizeof(char *) * (l + 1));
 	j = 0;
+	ft_putendl("ft_make_sarray");
 	while (fname != NULL)
 	{
 		if (flags[0] == '0' && fname->d_name[0] == '.')
@@ -62,6 +63,7 @@ static int		*ft_make_c(int l)
 	int *c;
 	int i;
 
+	ft_putendl("ft_make_c");
 	c = (int *)malloc(sizeof(int) * l);
 	i = -1;
 	while (++i < l)
@@ -79,6 +81,7 @@ int				*ft_sortascii(char *path, char *flags)
 	l = ft_countcontent(path, flags);
 	c = ft_make_c(l);
 	sarray = ft_make_sarray(path, flags, l);
+	ft_putendl("ft_sortascii");
 	i = 0;
 	while (sarray[++i])
 	{

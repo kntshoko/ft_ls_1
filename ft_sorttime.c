@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:48:18 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/30 11:02:50 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 15:46:41 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static int		*ft_make_t(int l)
 	int		*t;
 	int		j;
 
+	ft_putendl("ft_make_t");
 	j = 0;
 	t = (int *)malloc(sizeof(int) * l);
 	while (j < l)
@@ -51,6 +52,7 @@ int			*ft_sorttime(long *c, int l)
 	int		i;
 	int		j;
 
+	ft_putendl("ft_sorttime");
 	t = ft_make_t(l);
 	j = 0;
 	j = 0;

@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:35:41 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/31 13:11:18 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 15:37:02 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_print(int *order, char **ls, char *flags)
 
 	i = 0;
 	l = -1;
+	ft_putendl("ft_print");
 	while (ls[i] != NULL)
 		i++;
 	if (flags[3] == '1')
