@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:32:52 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/21 11:35:21 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 16:59:10 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int	ft_countdir(char *path, char *flags)
 		free(npath);
 	}
 	closedir(dname);
+	ft_putnbr(i);
 	return (i);
 }

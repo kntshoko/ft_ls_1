@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:59:17 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/31 15:48:49 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 16:19:42 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,4 @@ void	ft_impliment(char **flags, char *path)
 	ft_putendl("ft_impliment");
 	if (*(flags[0] + 2) == '1')
 		ft_recurse(path,*flags);
-	free(*flags);
 }

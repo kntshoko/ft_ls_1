@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 09:05:29 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/31 13:23:47 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 16:27:47 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	ft_callflagcheck(int argc, char **argv, char **d)
 			}
 			ft_flagcheck(argc, argv, str);
 			i++;
+			ft_putchar('\n');
 		}
 	}
 	else

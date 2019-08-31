@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:49:32 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/31 15:47:42 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 17:14:15 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static long	*ft_mtime(char *path, int l)
 		i++;
 	}
 	closedir(dname);
+	ft_putendl("ft_mtime_end");
 	return (c);
 }
 
@@ -45,10 +46,10 @@ int *ft_sort(char *path, char **flags)
 
 	l = ft_countcontent(path, *flags);
 	c = ft_mtime(path, l);
+	ft_putendl(*flags);
 	if (*flags[4] == '1')
 		t = ft_sorttime(c, l);
 	else
 		t = ft_sortascii(path, *flags);
-	ft_putendl("ft_sort");
 	return (t);
 }
