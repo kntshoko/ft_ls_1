@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:34:27 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 15:58:34 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/08/31 18:15:42 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_recurse(char *path, char *flags)
 	{
 		ft_putchar('\n');
 		ft_putstr(directories[i]);
-		ft_putendl(": \n");
+		ft_putstr(": \n");
 		ft_impliment(&flags, directories[i]);
 		i++;
 	}
