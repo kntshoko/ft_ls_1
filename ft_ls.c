@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 09:08:06 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/29 16:34:44 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/01 10:54:11 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_ls(char *path)
 	DIR				*dname;
 	struct dirent	*fname;
 
-	ft_putendl("ft_ls");
 	dname = NULL;
 	dname = opendir(path);
 	fname = readdir(dname);

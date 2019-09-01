@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:51:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/31 13:11:09 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/01 11:03:10 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,16 @@ static char	*ft_permissions(struct stat buff)
 	return (l);
 }
 
-char		*ft_l(struct dirent *fname)
+char		*ft_l(char *path, struct dirent *fname)
 {
 	struct stat		buff;
 	char			*l;
 	struct group	*grp;
 	struct passwd	*pss;
+	char			*npath;
 
-	lstat(fname->d_name, &buff);
+	npath = ft_join(ft_strdup(path), ft_strjoin("/", fname->d_name));
+	stat(npath, &buff);
 	grp = getgrgid(buff.st_gid);
 	pss = getpwuid(buff.st_uid);
 	l = ft_join(ft_type(buff), ft_join(ft_permissions(buff),
@@ -71,5 +73,6 @@ char		*ft_l(struct dirent *fname)
 	ft_join(ft_itoa(buff.st_size), ft_join(ft_strdup("\t") ,
 	ft_join(ft_strsub(ctime(&buff.st_mtime), 4, 12),
 	ft_join(ft_strdup("\t"), ft_strdup(fname->d_name))))))))))))));
+	free(npath);
 	return (l);
 }
