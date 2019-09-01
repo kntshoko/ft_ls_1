@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 07:22:13 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/01 10:51:44 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/01 13:58:40 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,3 @@ int	main(int argc, char **argv)
 		ft_checkpath(argc, argv);
 	return (0);
 }
-
-
-
-
-
-
-
-
-
-
