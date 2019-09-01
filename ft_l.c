@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:51:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/01 11:03:10 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/01 11:25:42 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ char		*ft_l(char *path, struct dirent *fname)
 	struct passwd	*pss;
 	char			*npath;
 
+	ft_putendl("------ft_listdir--------");
 	npath = ft_join(ft_strdup(path), ft_strjoin("/", fname->d_name));
 	stat(npath, &buff);
 	grp = getgrgid(buff.st_gid);
