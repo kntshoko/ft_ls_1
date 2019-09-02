@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:49:32 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/08/31 20:19:47 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/02 14:30:34 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static long	*ft_mtime(char *path, int l)
 	struct stat		buff;
 	int				i;
 
-	ft_putendl("ft_mtime");
 	dname = NULL;
 	dname = opendir(path);
 	fname = readdir(dname);
@@ -34,7 +33,6 @@ static long	*ft_mtime(char *path, int l)
 		i++;
 	}
 	closedir(dname);
-	ft_putendl("ft_mtime_end");
 	return (c);
 }
 

@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:30:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/01 11:27:02 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/02 14:37:54 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	**ft_directories(char *path, int l, char *flags)
 	int				i;
 
 
-	ft_putendl("ft_directoriiies");
 	i = 0;
 	dname = opendir(path);
 	fname = readdir(dname);
@@ -42,10 +41,5 @@ char	**ft_directories(char *path, int l, char *flags)
 	}
 	closedir(dname);
 	d[i] = NULL;
-	ft_putendl("+++++++++++++++++++++++++");
-	i = 0;
-	while (d[i] != NULL)
-		ft_putendl(d[i++]);
-	ft_putendl("+++++++++++++++++++++++++");
 	return (d);
 }
