@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:32:52 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/01 13:57:43 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/02 10:05:00 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	ft_countdir(char *path, char *flags)
 	f = readdir(dname);
 	while (f != NULL)
 	{
-	ft_putendl("-------ft_countdir---------");
 		npath = ft_join(ft_strdup(path), ft_join(ft_strdup("/"),
 		ft_strdup(f->d_name)));
 		if (ft_cmp(f->d_name, ".") == 0 || ft_cmp(f->d_name, "..") == 0)
