@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:54:57 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/02 14:31:15 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/03 13:11:31 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char     **ft_listdir(char *flags, char *path)
 	int				l;
 
 	i = 0;
+	ft_putendl("________ft_listdir________");
 	l = ft_countcontent(path, flags);
 	dname = opendir(path);
 	fname = readdir(dname);

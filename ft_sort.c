@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:49:32 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/02 14:30:34 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/03 12:34:36 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static long	*ft_mtime(char *path, int l)
 	dname = NULL;
 	dname = opendir(path);
 	fname = readdir(dname);
-	c = (long *)malloc(l + 1);
+	c = (long *)malloc(l);
 	i = 0;
 	while (fname != NULL)
 	{
@@ -38,7 +38,7 @@ static long	*ft_mtime(char *path, int l)
 
 int *ft_sort(char *path, char *flags)
 {
-	long	*c = NULL;
+	long	*c;
 	int		*t;
 	int		l;
 
@@ -49,5 +49,6 @@ int *ft_sort(char *path, char *flags)
 		t = ft_sorttime(c, l);
 	else
 		t = ft_sortascii(path, flags);
+	free(c);
 	return (t);
 }
