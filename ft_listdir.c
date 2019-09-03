@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:54:57 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/03 13:11:31 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/03 18:00:56 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,19 @@ char     **ft_listdir(char *flags, char *path)
 	int				l;
 
 	i = 0;
-	ft_putendl("________ft_listdir________");
+	ft_putendl(flags);
 	l = ft_countcontent(path, flags);
+	ft_putendl("________ft_listdir start________");
+	ft_putstr("number cotent in : ");
+	ft_putstr(path);
+	ft_putstr(" == ");
+	ft_putnbr(l);
 	dname = opendir(path);
 	fname = readdir(dname);
+	if (fname != NULL)
+	ft_putendl("fname not null");
+	else
+	ft_putendl("fname is null");
 	ls = (char **)malloc(sizeof(char *) * (l + 1));
 	ls[l] = NULL;
 	while (fname != NULL && i < l)
@@ -44,6 +53,7 @@ char     **ft_listdir(char *flags, char *path)
 			fname = readdir(dname);
 			i++;
 		}
+	ft_putendl("________ft_listdir end________");
 	}
 	closedir(dname);
 	return (ls);
