@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:59:17 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/03 14:32:43 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/06 14:23:22 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,18 @@ void	ft_impliment(char *flags, char *path)
 {
 	char 	**ls;
 	int		*order;
+	int 	j;
 
-	ft_putendl(flags);
+	j = 0;
 	order = ft_sort(path, flags);
-	ft_putendl("___ft_impliment befor ls____");
 	ls = ft_listdir(flags, path);
-	ft_putendl("___ft_impliment after ls_--ended here___");
 	ft_print(order, ls, flags);
 	free(order);
-	int i = -1;
-	while(ls[++i])
-		free(ls[i]);
-	if (flags[2] == '1')
+	while(ls[j] != NULL)
 	{
-		ft_putendl("________recurse___________");
-		ft_putendl(path);
-		ft_recurse(path, flags);
+		ft_strdel(&ls[j]);
+		j++;
 	}
+	if (flags[2] == '1')
+		ft_recurse(path, flags);
 }

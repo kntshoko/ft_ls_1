@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:34:27 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/03 15:18:40 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:26:13 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ void	ft_recurse(char *path, char *flags)
 		ft_impliment(flags, directories[i]);
 		i++;
 	}
-	free(*directories);
 		ft_putendl("__________recurse____________");
 }

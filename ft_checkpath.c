@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 09:05:29 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/01 14:11:32 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:21:56 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static void	ft_callflagcheck(int argc, char **argv, char **d)
 			ft_flagcheck(argc, argv, str);
 			i++;
 			ft_putchar('\n');
-			free(str);
 		}
 	}
 	else
@@ -76,9 +75,7 @@ void		ft_checkpath(int argc, char **argv)
 	while (argv[cnt] != NULL)
 	{
 		hold = ft_strjoin(str, ft_listpath(argv[cnt]));
-		free(str);
-		str = ft_strdup(hold);
-		free(hold);
+		str = hold;
 		cnt++;
 	}
 	d = ft_strsplit(str, ' ');

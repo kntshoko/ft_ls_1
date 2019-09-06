@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:48:18 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/03 13:10:30 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:28:54 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,11 @@ static int		*ft_make_t(int l)
 
 	j = 0;
 	t = (int *)malloc(sizeof(int) * (l));
-		ft_putendl("__________ft_make_t__________");
 	while (j <= l)
 	{
 		t[j] = j;
-		ft_putnbr(t[j]);
-		ft_putstr(" <> ");
 		j++;
 	}
-		ft_putendl("__________ft_make_t__________");
 	return (t);
 }
 

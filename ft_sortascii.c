@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:37:25 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/03 12:39:55 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:28:02 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ int				*ft_sortascii(char *path, char *flags)
 
 	l = ft_countcontent(path, flags);
 	c = ft_make_c(l);
-	ft_putendl(path);
 	sarray = ft_make_sarray(path, flags, l);
 	i = 0;
 	while (sarray[++i])
@@ -90,6 +89,5 @@ int				*ft_sortascii(char *path, char *flags)
 			i = 0;
 		}
 	}
-	free(sarray);
 	return (c);
 }

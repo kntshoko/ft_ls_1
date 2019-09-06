@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:53:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/03 17:52:26 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/04 12:11:21 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_countcontent(char *path, char *flags)
 	dname = NULL;
 	dname = opendir(path);
 	fname = readdir(dname);
-	ft_putendl("__________countcontent start_________");
 	i = 0;
 	while (fname != NULL)
 	{
@@ -34,6 +33,5 @@ int	ft_countcontent(char *path, char *flags)
 		}
 	}
 	closedir(dname);
-	ft_putendl("__________countcontent end_________");
 	return (i);
 }

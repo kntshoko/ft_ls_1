@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:49:32 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/03 12:34:36 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:29:19 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,9 @@ int *ft_sort(char *path, char *flags)
 
 	l = ft_countcontent(path, flags);
 	c = ft_mtime(path, l);
-	ft_putendl(flags);
 	if (flags[4] == '1')
 		t = ft_sorttime(c, l);
 	else
 		t = ft_sortascii(path, flags);
-	free(c);
 	return (t);
 }
