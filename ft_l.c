@@ -6,7 +6,7 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:51:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/06 14:23:59 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/07 17:28:32 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,16 +62,19 @@ char		*ft_l(char *path, struct dirent *fname)
 	struct passwd	*pss;
 	char			*npath;
 
+	ft_putendl(path);
 	npath = ft_join(ft_strdup(path), ft_strjoin("/", fname->d_name));
+	ft_putendl(npath);
 	lstat(npath, &buff);
 	grp = getgrgid(buff.st_gid);
 	pss = getpwuid(buff.st_uid);
 	l = ft_join(ft_type(buff), ft_join(ft_permissions(buff),
-	ft_join(ft_strdup(" "),  ft_join(ft_itoa(buff.st_nlink) , ft_join(ft_strdup("\t"),
-	ft_join(ft_strdup(pss->pw_name), ft_join(ft_strdup(" "),
-	ft_join(ft_strdup(grp->gr_name), ft_join(ft_strdup("\t") ,
-	ft_join(ft_itoa(buff.st_size), ft_join(ft_strdup("\t") ,
-	ft_join(ft_strsub(ctime(&buff.st_mtime), 4, 12),
+	ft_join(ft_strdup(" "),  ft_join(ft_itoa(buff.st_nlink) ,
+	ft_join(ft_strdup("\t"), ft_join(ft_strdup(pss->pw_name),
+	ft_join(ft_strdup(" "), ft_join(ft_strdup(grp->gr_name),
+	ft_join(ft_strdup("\t") , ft_join(ft_itoa(buff.st_size),
+	ft_join(ft_strdup("\t") ,ft_join(ft_strsub(ctime(&buff.st_mtime),4, 12),
 	ft_join(ft_strdup("\t"), ft_strdup(fname->d_name))))))))))))));
+	ft_strdel(&npath);
 	return (l);
 }

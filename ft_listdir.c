@@ -6,20 +6,20 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:54:57 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/06 17:46:22 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/07 16:39:46 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-/*static char *ft_filename(struct dirent *fname)
+static char *ft_filename(struct dirent *fname)
 {
 	char *str;
 
 	str = (char *)malloc(sizeof(char) * (255));
 	ft_strcpy(str, fname->d_name);
 	return (str);
-}*/
+}
 
 char     **ft_listdir(char *flags, char *path)
 {
@@ -38,19 +38,20 @@ char     **ft_listdir(char *flags, char *path)
 	{	
 
 		if (flags[0] == '0' && fname->d_name[0] == '.')
-			i += 0;
+			fname = readdir(dname);
 		else if (flags[1] == '1')
 		{
+			ft_putendl("-------------------");
 			ls[i] = ft_l(path, fname);
 			i++;
+			fname = readdir(dname);
 		}
 		else
 		{
-			ls[i] = ft_strdup(fname->d_name);
+			ls[i] = ft_filename(fname);
 			i++;
-			ft_putendl("-------------------");
+			fname = readdir(dname);
 		}
-		fname = readdir(dname);
 	}
 	closedir(dname);
 	return (ls);
