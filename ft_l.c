@@ -6,12 +6,25 @@
 /*   By: kntshoko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 08:51:34 by kntshoko          #+#    #+#             */
-/*   Updated: 2019/09/07 17:28:32 by kntshoko         ###   ########.fr       */
+/*   Updated: 2019/09/07 17:44:12 by kntshoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
+static char *ft_npath(char *s1, char *s2, char *s3)
+{
+	char *str;
+
+    if (!s1 || !s2 || !s3)
+        return (NULL);
+    if (!(str = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + ft_strlen(s3))))
+        return (NULL);
+    ft_strcpy(str, s1);
+    ft_strcat(str, s2);
+	ft_strcat(str, s3);
+    return ((char *)str);
+}
 static char	*ft_type(struct stat buff)
 {
 	char *l;
@@ -63,7 +76,8 @@ char		*ft_l(char *path, struct dirent *fname)
 	char			*npath;
 
 	ft_putendl(path);
-	npath = ft_join(ft_strdup(path), ft_strjoin("/", fname->d_name));
+	ft_putendl(fname->d_name);
+	npath = ft_npath(path, "/", fname->d_name);
 	ft_putendl(npath);
 	lstat(npath, &buff);
 	grp = getgrgid(buff.st_gid);
